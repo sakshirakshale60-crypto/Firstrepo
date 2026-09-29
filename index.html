@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Utsav Darshan | Cultural Events</title>
+
+    <style>
+
+        /* ===== BASIC ===== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf7f2;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ===== HEADER ===== */
+
+        .hero {
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            font-size: 15px;
+        }
+
+        .login-btn {
+            background: white;
+            color: #5b2c6f !important;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+
+        /* ===== HERO ===== */
+
+        .hero {
+            min-height: 500px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(91, 44, 111, 0.85),
+                    rgba(91, 44, 111, 0.85)
+                ),
+                url("https://images.unsplash.com/photo-1604608672516-f1b9e8f4c0b5?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .small-title {
+            font-size: 15px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #ffd166;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .primary-btn {
+            display: inline-block;
+
+            background: #ffd166;
+            color: #3d2348;
+
+            padding: 13px 25px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .secondary-btn {
+            display: inline-block;
+
+            border: 2px solid white;
+            color: white;
+
+            padding: 11px 25px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+            margin: 5px;
+        }
+
+
+        /* ===== SEARCH ===== */
+
+        .search-section {
+            text-align: center;
+            padding: 60px 7%;
+        }
+
+        .search-section h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .search-section p {
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        .search-box {
+            max-width: 900px;
+            margin: auto;
+
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input,
+        .search-box select {
+
+            flex: 1;
+
+            padding: 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 6px;
+
+            font-size: 15px;
+        }
+
+        .search-box button {
+            padding: 15px 25px;
+
+            background: #5b2c6f;
+            color: white;
+
+            border: none;
+            border-radius: 6px;
+
+            cursor: pointer;
+        }
+
+
+        /* ===== CATEGORIES ===== */
+
+        .categories {
+            padding: 60px 7%;
+            background: white;
+            text-align: center;
+        }
+
+        .categories h2 {
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-card {
+            width: 190px;
+
+            padding: 25px 15px;
+
+            border: 1px solid #eee;
+            border-radius: 10px;
+
+            background: #faf7f2;
+        }
+
+        .category-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .category-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+
+        /* ===== EVENTS ===== */
+
+        .events-section {
+            padding: 70px 7%;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 35px;
+        }
+
+        .section-heading h2 {
+            font-size: 32px;
+        }
+
+        .section-label {
+            color: #5b2c6f;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .view-all {
+            color: #5b2c6f;
+            font-weight: bold;
+        }
+
+        .event-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .event-card {
+            background: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .event-image {
+            height: 180px;
+
+            background: #ead8ef;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 65px;
+        }
+
+        .event-info {
+            padding: 25px;
+        }
+
+        .event-category {
+            color: #5b2c6f;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .event-info h3 {
+            margin: 10px 0 15px;
+            font-size: 21px;
+        }
+
+        .event-info p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .event-info a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #5b2c6f;
+            font-weight: bold;
+        }
+
+
+        /* ===== HOW IT WORKS ===== */
+
+        .how-section {
+            padding: 70px 7%;
+            background: #f0e7f2;
+            text-align: center;
+        }
+
+        .how-section h2 {
+            font-size: 32px;
+            margin-bottom: 45px;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .step {
+            max-width: 280px;
+        }
+
+        .step-number {
+            font-size: 35px;
+            font-weight: bold;
+            color: #5b2c6f;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+
+        /* ===== CONTRIBUTION ===== */
+
+        .contribute {
+            margin: 70px 7%;
+
+            padding: 50px;
+
+            border-radius: 15px;
+
+            background: #5b2c6f;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contribute h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contribute p {
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #28152f;
+            color: white;
+
+            padding: 50px 7% 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-content a {
+            display: block;
+            color: #ddd;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+
+            border-top: 1px solid #4a3850;
+
+            text-align: center;
+
+            color: #aaa;
+        }
+
+
+        /* ===== MOBILE ===== */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .event-container {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contribute {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            🪔 Utsav Darshan
+        </div>
+
+        <nav>
+
+            <a href="#">Home</a>
+            <a href="#">Events</a>
+            <a href="#">Calendar</a>
+            <a href="#">Cities</a>
+            <a href="#">About</a>
+            <a href="#" class="login-btn">Login</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                ✨ CELEBRATE • DISCOVER • EXPERIENCE
+            </p>
+
+            <h1>
+                Discover the <span>Festivals</span><br>
+                Around You
+            </h1>
+
+            <p class="hero-description">
+
+                Explore festivals, fairs, yatras, temple events
+                and cultural celebrations happening across India.
+
+            </p>
+
+            <a href="#" class="primary-btn">
+                Explore Events
+            </a>
+
+            <a href="#" class="secondary-btn">
+                View Calendar
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="search-section">
+
+        <h2>Find Cultural Events</h2>
+
+        <p>
+            Search festivals and cultural events happening in your city.
+        </p>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="Search event or festival..."
+            >
+
+            <select>
+
+                <option>Select City</option>
+                <option>Pune</option>
+                <option>Mumbai</option>
+                <option>Nashik</option>
+                <option>Nagpur</option>
+                <option>Ahmedabad</option>
+                <option>Jaipur</option>
+                <option>Delhi</option>
+
+            </select>
+
+            <button>
+                Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="categories">
+
+        <h2>Explore by Category</h2>
+
+        <div class="category-container">
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🎉
+                </div>
+
+                <h3>Festivals</h3>
+
+                <p>
+                    Celebrate India's colorful festivals.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🎪
+                </div>
+
+                <h3>Mel﻿as & Fairs</h3>
+
+                <p>
+                    Discover traditional local fairs.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🛕
+                </div>
+
+                <h3>Temple Events</h3>
+
+                <p>
+                    Find spiritual and temple celebrations.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🎭
+                </div>
+
+                <h3>Cultural Programs</h3>
+
+                <p>
+                    Experience local art and traditions.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🚩
+                </div>
+
+                <h3>Yatras</h3>
+
+                <p>
+                    Explore traditional religious journeys.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVENTS -->
+
+    <section class="events-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    WHAT'S HAPPENING
+                </p>
+
+                <h2>
+                    Upcoming Events
+                </h2>
+
+            </div>
+
+            <a href="#" class="view-all">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="event-container">
+
+
+            <div class="event-card">
+
+                <div class="event-image">
+                    🎊
+                </div>
+
+                <div class="event-info">
+
+                    <span class="event-category">
+                        FESTIVAL
+                    </span>
+
+                    <h3>
+                        Ganesh Festival
+                    </h3>
+
+                    <p>
+                        📍 Pune, Maharashtra
+                    </p>
+
+                    <p>
+                        📅 September 1 – September 10
+                    </p>
+
+                    <a href="#">
+                        View Details →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-image">
+                    🪔
+                </div>
+
+                <div class="event-info">
+
+                    <span class="event-category">
+                        CULTURAL
+                    </span>
+
+                    <h3>
+                        Navratri Festival
+                    </h3>
+
+                    <p>
+                        📍 Ahmedabad, Gujarat
+                    </p>
+
+                    <p>
+                        📅 October 1 – October 9
+                    </p>
+
+                    <a href="#">
+                        View Details →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-image">
+                    🎆
+                </div>
+
+                <div class="event-info">
+
+                    <span class="event-category">
+                        CELEBRATION
+                    </span>
+
+                    <h3>
+                        Diwali Celebration
+                    </h3>
+
+                    <p>
+                        📍 Mumbai, Maharashtra
+                    </p>
+
+                    <p>
+                        📅 October 20 – October 24
+                    </p>
+
+                    <a href="#">
+                        View Details →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-section">
+
+        <p class="section-label">
+            SIMPLE & EASY
+        </p>
+
+        <h2>
+            How Utsav Darshan Works
+        </h2>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Choose Your City
+                </h3>
+
+                <p>
+                    Select your city and discover
+                    cultural events happening nearby.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Discover Events
+                </h3>
+
+                <p>
+                    Browse festivals, fairs,
+                    yatras and cultural programs.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Experience Culture
+                </h3>
+
+                <p>
+                    Plan your visit and experience
+                    India's local traditions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTRIBUTION -->
+
+    <section class="contribute">
+
+        <div>
+
+            <p class="section-label">
+                BE PART OF THE COMMUNITY
+            </p>
+
+            <h2>
+                Know About a Local Event?
+            </h2>
+
+            <p>
+                Help your community by sharing festivals,
+                fairs and cultural events happening in your city.
+            </p>
+
+        </div>
+
+        <a href="#" class="primary-btn">
+            Submit an Event
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h2>
+                    🪔 Utsav Darshan
+                </h2>
+
+                <br>
+
+                <p>
+                    Discover India's festivals,
+                    traditions and cultural celebrations.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="#">
+                    Home
+                </a>
+
+                <a href="#">
+                    Events
+                </a>
+
+                <a href="#">
+                    Calendar
+                </a>
+
+                <a href="#">
+                    Cities
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="#">
+                    Login
+                </a>
+
+                <a href="#">
+                    Register
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Utsav Darshan. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
